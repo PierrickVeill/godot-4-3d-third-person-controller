@@ -7,7 +7,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var _velocity := Vector3.ZERO
 
 @onready var _explosion_area: Area3D = $ExplosionArea
-@onready var _explosion_sound: AudioStreamPlayer3D = $ExplosionSound
+#@onready var _explosion_sound: AudioStreamPlayer3D = $ExplosionSound
 @onready var _explosion_start_timer: Timer = $ExplosionStartTimer
 
 
@@ -31,8 +31,8 @@ func throw(throw_velocity: Vector3) -> void:
 func _explode() -> void:
 	set_physics_process(false)
 
-	_explosion_sound.pitch_scale = randfn(2.0, 0.1)
-	_explosion_sound.play()
+	#_explosion_sound.pitch_scale = randfn(2.0, 0.1)
+	#_explosion_sound.play()
 
 	var bodies := _explosion_area.get_overlapping_bodies()
 	for body in bodies:
@@ -48,5 +48,5 @@ func _explode() -> void:
 	explosion.global_position = global_position
 
 	hide()
-	await _explosion_sound.finished
+	#await _explosion_sound.finished
 	queue_free()

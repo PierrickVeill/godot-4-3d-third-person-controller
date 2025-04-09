@@ -11,7 +11,7 @@ const PUFF_SCENE := preload("smoke_puff/smoke_puff.tscn")
 @onready var _beetle_skin: Node3D = $BeetlebotSkin
 @onready var _navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var _death_collision_shape: CollisionShape3D = $DeathCollisionShape
-@onready var _defeat_sound: AudioStreamPlayer3D = $DefeatSound
+#@onready var _defeat_sound: AudioStreamPlayer3D = $DefeatSound
 
 @onready var _target: Node3D = null
 @onready var _alive: bool = true
@@ -64,7 +64,7 @@ func damage(impact_point: Vector3, force: Vector3) -> void:
 	if not _alive:
 		return
 
-	_defeat_sound.play()
+	#_defeat_sound.play()
 	_alive = false
 	_beetle_skin.power_off()
 

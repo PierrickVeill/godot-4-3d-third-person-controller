@@ -9,7 +9,7 @@ const MAX_LAUNCH_HEIGHT := 3.0
 const SPAWN_TWEEN_DURATION := 1.0
 const FOLLOW_TWEEN_DURATION := 0.5
 
-@onready var _collect_audio: AudioStreamPlayer3D = $CollectAudio
+#@onready var _collect_audio: AudioStreamPlayer3D = $CollectAudio
 @onready var _player_detection_area: Area3D = $PlayerDetectionArea
 @onready var _initial_tween_position := Vector3.ZERO
 @onready var _target: Node3D = null
@@ -51,9 +51,9 @@ func _on_body_entered(body: PhysicsBody3D) -> void:
 
 
 func _collect() -> void:
-	_collect_audio.pitch_scale = randfn(1.0, 0.1)
-	_collect_audio.play()
+	#_collect_audio.pitch_scale = randfn(1.0, 0.1)
+	#_collect_audio.play()
 	_target.collect_coin()
 	hide()
-	await _collect_audio.finished
+	#await _collect_audio.finished
 	queue_free()

@@ -3,11 +3,11 @@ extends Node3D
 # Emit when smoke density is at maximum
 signal full
 
-@onready var smoke_sounds := $SmokeSounds.get_children()
+#@onready var smoke_sounds := $SmokeSounds.get_children()
 
 
 func _ready():
-	smoke_sounds.pick_random().play()
+	#smoke_sounds.pick_random().play()
 	
 	$AnimationPlayer.play("poof")
 	await $AnimationPlayer.animation_finished

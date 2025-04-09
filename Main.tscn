@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ccjru1onq2k2c"]
+[gd_scene load_steps=26 format=3 uid="uid://ccjru1onq2k2c"]
 
 [ext_resource type="PackedScene" uid="uid://mb58xbunfaep" path="res://icons/weapon_ui.tscn" id="1_3u7h6"]
 [ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://Environment/sky/blue_sky.tres" id="2_4bjxn"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://oxyn25v5khuk" path="res://Enemies/Beetle.tscn" id="14_tmmem"]
 [ext_resource type="PackedScene" uid="uid://bi31qtqv1sf2s" path="res://Environment/flowers/flower_patch.tscn" id="15_jqya0"]
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
-[ext_resource type="AudioStream" uid="uid://bveh08m6w5ryf" path="res://Level/Music/mountain.mp3" id="17_mil5a"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -1605,10 +1604,6 @@ transform = Transform3D(2.05346, 0, 0.789485, 0, 2.2, 0, -0.789485, 0, 2.05346, 
 skeleton = NodePath("../..")
 
 [node name="DemoPage" parent="." instance=ExtResource("16_qr75n")]
-
-[node name="StageMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_mil5a")
-autoplay = true
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 

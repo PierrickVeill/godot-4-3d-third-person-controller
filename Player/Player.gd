@@ -40,8 +40,8 @@ enum WEAPON_TYPE { DEFAULT, GRENADE }
 @onready var _character_skin: CharacterSkin = $CharacterRotationRoot/CharacterSkin
 @onready var _ui_aim_recticle: ColorRect = %AimRecticle
 @onready var _ui_coins_container: HBoxContainer = %CoinsContainer
-@onready var _step_sound: AudioStreamPlayer3D = $StepSound
-@onready var _landing_sound: AudioStreamPlayer3D = $LandingSound
+#@onready var _step_sound: AudioStreamPlayer3D = $StepSound
+#@onready var _landing_sound: AudioStreamPlayer3D = $LandingSound
 
 @onready var _equipped_weapon: WEAPON_TYPE = WEAPON_TYPE.DEFAULT
 @onready var _move_direction := Vector3.ZERO
@@ -166,7 +166,8 @@ func _physics_process(delta: float) -> void:
 			_character_skin.set_moving(false)
 
 	if is_just_on_floor:
-		_landing_sound.play()
+		#_landing_sound.play()
+		pass
 
 	var position_before := global_position
 	move_and_slide()
@@ -235,8 +236,9 @@ func _get_camera_oriented_input() -> Vector3:
 
 
 func play_foot_step_sound() -> void:
-	_step_sound.pitch_scale = randfn(1.2, 0.2)
-	_step_sound.play()
+	#_step_sound.pitch_scale = randfn(1.2, 0.2)
+	#_step_sound.play()
+	pass
 
 
 func damage(_impact_point: Vector3, force: Vector3) -> void:

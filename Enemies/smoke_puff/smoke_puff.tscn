@@ -1,11 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://okmv1cbta83x"]
+[gd_scene load_steps=11 format=3 uid="uid://okmv1cbta83x"]
 
 [ext_resource type="Script" path="res://Enemies/smoke_puff/smoke_puff.gd" id="1_3ltu4"]
 [ext_resource type="PackedScene" uid="uid://n5v4vlr80bj8" path="res://Enemies/smoke_puff/smoke_ball.glb" id="3_gsgkx"]
 [ext_resource type="Material" uid="uid://cnvmsr64tkgyn" path="res://Enemies/smoke_puff/smoke_ball_middle_mat.tres" id="3_wa5gb"]
 [ext_resource type="Shader" path="res://Enemies/smoke_puff/smoke_ball.gdshader" id="4_bh8q1"]
-[ext_resource type="AudioStream" uid="uid://ddhimfnmpxlrp" path="res://Enemies/smoke_puff/Sounds/poof_1.wav" id="5_qiexl"]
-[ext_resource type="AudioStream" uid="uid://cgv0ngrh5ofe" path="res://Enemies/smoke_puff/Sounds/poof_2.wav" id="6_1l2bk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sxisx"]
 noise_type = 2
@@ -338,14 +336,6 @@ material_override = ExtResource("3_wa5gb")
 libraries = {
 "": SubResource("AnimationLibrary_pbed2")
 }
-
-[node name="SmokeSounds" type="Node3D" parent="."]
-
-[node name="SoundPuff1" type="AudioStreamPlayer3D" parent="SmokeSounds"]
-stream = ExtResource("5_qiexl")
-
-[node name="SoundPuff2" type="AudioStreamPlayer3D" parent="SmokeSounds"]
-stream = ExtResource("6_1l2bk")
 
 [editable path="smoke_ball"]
 [editable path="smoke_ball2"]
