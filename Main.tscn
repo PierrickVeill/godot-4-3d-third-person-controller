@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ccjru1onq2k2c"]
+[gd_scene load_steps=29 format=3 uid="uid://ccjru1onq2k2c"]
 
 [ext_resource type="PackedScene" uid="uid://mb58xbunfaep" path="res://icons/weapon_ui.tscn" id="1_3u7h6"]
 [ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://Environment/sky/blue_sky.tres" id="2_4bjxn"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://oxyn25v5khuk" path="res://Enemies/Beetle.tscn" id="14_tmmem"]
 [ext_resource type="PackedScene" uid="uid://bi31qtqv1sf2s" path="res://Environment/flowers/flower_patch.tscn" id="15_jqya0"]
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
+[ext_resource type="Script" path="res://water_path.gd" id="20_60tes"]
+[ext_resource type="PackedScene" uid="uid://8o56ett8oups" path="res://Environment/orange_flowers/orange_flower.tscn" id="21_gha4u"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -61,6 +63,13 @@ subdivide_depth = 30
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gym67"]
 size = Vector3(130, 6, 130)
+
+[sub_resource type="Curve3D" id="Curve3D_ngg67"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.83518, 0, 31.28, 0, 0, 0, 0, 0, 0, 13.5754, 0, 23.4759, 0, 0, 0, 0, 0, 0, 22.7587, 0, 13.5095, 0, 0, 0, 0, 0, 0, 28.2403, 0, -0.0164379, 0, 0, 0, 0, 0, 0, 21.9757, 0, -11.0507, 0, 0, 0, 0, 0, 0, 13.3618, 0, -13.7559, 0, 0, 0, 0, 0, 0, 9.23283, 0, -21.3731, 0, 0, 0, 0, 0, 0, -1.23196, 0, -21.5867, 0, 0, 0, 0, 0, 0, -20.097, 0, -14.2542, 0, 0, 0, 0, 0, 0, -14.4731, 0, 4.2549, 0, 0, 0, 0, 0, 0, -17.3919, 0, 6.46176, 0, 0, 0, 0, 0, 0, -18.5309, 0, 9.95002, 0, 0, 0, 0, 0, 0, -26.7176, 0, -16.6747, 0, 0, 0, 0, 0, 0, -54.339, 0, -9.48457, 0, 0, 0, 0, 0, 0, -56.6882, 0, -8.70149, 0, 0, 0, 0, 0, 0, -47.7896, 0, 25.6116, 0, 0, 0, 0, 0, 0, -52.1321, 0, 28.388, 0, 0, 0, 0, 0, 0, -52.488, 0, 34.0119, 0, 0, 0, 0, 0, 0, -46.0098, 0, 46.5412, 0, 0, 0, 0, 0, 0, -22.0191, 0, 39.4223, 0, 0, 0, 0, 0, 0, 0.974892, 0, 32.6593, 0, 0, 0, 0, 0, 0, 1.83518, 0, 31.28),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 22
 
 [node name="Playground" type="Node3D"]
 
@@ -138,9 +147,9 @@ collision_mask = 3
 [node name="terrain" parent="NavigationRegion3D/terrain_main_ground" index="5"]
 material_override = ExtResource("5_xal68")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/terrain" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/terrain" index="0" groups=["grass"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_004" parent="NavigationRegion3D/terrain_main_ground" index="6"]
 material_override = ExtResource("6_q3y6j")
@@ -1604,6 +1613,17 @@ transform = Transform3D(2.05346, 0, 0.789485, 0, 2.2, 0, -0.789485, 0, 2.05346, 
 skeleton = NodePath("../..")
 
 [node name="DemoPage" parent="." instance=ExtResource("16_qr75n")]
+
+[node name="WaterPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_ngg67")
+script = ExtResource("20_60tes")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="WaterPath"]
+transform = Transform3D(-0.251913, 0, 0.967743, 0, 1, 0, -0.967743, 0, -0.251913, -41.5517, 0, -12.8132)
+progress = 173.189
+
+[node name="Emitter" parent="WaterPath/PathFollow3D" instance=ExtResource("21_gha4u")]
+transform = Transform3D(-2.98372, 0.312158, -1.36448e-08, 0, -1.31134e-07, -3, -0.312158, -2.98372, 1.30422e-07, 0, 0, 0)
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 

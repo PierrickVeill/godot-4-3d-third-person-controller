@@ -238,6 +238,8 @@ func _get_camera_oriented_input() -> Vector3:
 func play_foot_step_sound() -> void:
 	#_step_sound.pitch_scale = randfn(1.2, 0.2)
 	#_step_sound.play()
+	_playFootstep()
+	print("Walking...")
 	pass
 
 
@@ -281,3 +283,10 @@ func _register_input_actions() -> void:
 		var input_key = InputEventKey.new()
 		input_key.keycode = INPUT_ACTIONS[action]
 		InputMap.action_add_event(action, input_key)
+
+func _playFootstep():
+	if $StepCast.is_colliding():
+		print("Walking on sth...")
+		var collider = $StepCast.get_collider()
+		if collider.is_in_group("grass"):
+			print("Walked on grass")

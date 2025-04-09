@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[global_group]
+
+grass=""
+
 [input]
 
 move_up={
@@ -111,6 +115,7 @@ pause={
 3d_physics/layer_2="Level"
 3d_physics/layer_3="Coins"
 3d_physics/layer_4="Player"
+3d_physics/layer_5="Footsteps"
 
 [physics]
 
