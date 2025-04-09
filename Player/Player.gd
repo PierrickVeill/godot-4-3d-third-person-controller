@@ -179,6 +179,8 @@ func _physics_process(delta: float) -> void:
 	var epsilon := 0.001
 	if delta_position.length() < epsilon and velocity.length() > epsilon:
 		global_position += get_wall_normal() * 0.1
+	
+	$AkListener3D.rotation = $CameraController/PlayerCamera.rotation
 
 
 func attack() -> void:

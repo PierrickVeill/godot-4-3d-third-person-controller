@@ -1,0 +1,5 @@
+[gd_resource type="WwisePlatformInfo" format=3 uid="uid://bt2v77mfcos2f"]
+
+[resource]
+platform_name = "Mac"
+platform_path = "../../SlopeAudio/GeneratedSoundBanks/Mac"

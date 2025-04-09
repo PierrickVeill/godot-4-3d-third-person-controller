@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ccjru1onq2k2c"]
+[gd_scene load_steps=30 format=3 uid="uid://ccjru1onq2k2c"]
 
 [ext_resource type="PackedScene" uid="uid://mb58xbunfaep" path="res://icons/weapon_ui.tscn" id="1_3u7h6"]
 [ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://Environment/sky/blue_sky.tres" id="2_4bjxn"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
 [ext_resource type="Script" path="res://water_path.gd" id="20_60tes"]
 [ext_resource type="PackedScene" uid="uid://8o56ett8oups" path="res://Environment/orange_flowers/orange_flower.tscn" id="21_gha4u"]
+[ext_resource type="WwiseEvent" uid="uid://bujiyqem13r5e" path="res://Wwise/resources/Event/{4116F2CB-4638-4F21-A906-B0961D2F26D7}.tres" id="22_8sb1g"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -1619,11 +1620,15 @@ curve = SubResource("Curve3D_ngg67")
 script = ExtResource("20_60tes")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="WaterPath"]
-transform = Transform3D(-0.251913, 0, 0.967743, 0, 1, 0, -0.967743, 0, -0.251913, -41.5517, 0, -12.8132)
+transform = Transform3D(-0.251913, 0, 0.967743, 0, 1, 0, -0.967743, 0, -0.251913, -41.5512, 0, -12.8134)
 progress = 173.189
 
 [node name="Emitter" parent="WaterPath/PathFollow3D" instance=ExtResource("21_gha4u")]
 transform = Transform3D(-2.98372, 0.312158, -1.36448e-08, 0, -1.31134e-07, -3, -0.312158, -2.98372, 1.30422e-07, 0, 0, 0)
+
+[node name="RiverSFX" type="AkEvent3D" parent="WaterPath/PathFollow3D"]
+event = ExtResource("22_8sb1g")
+trigger_on = 1
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 

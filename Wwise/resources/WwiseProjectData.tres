@@ -1,0 +1,154 @@
+[gd_resource type="WwiseProjectData" load_steps=23 format=3 uid="uid://csvcn5d42coch"]
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_t4fo8"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Acoustic_Banner"
+type = 15
+name = "Acoustic_Banner"
+guid = "{2F2D53F2-DACC-408E-8B88-98B1B52A26D6}"
+id = 4168643977
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0ancn"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Anechoic"
+type = 15
+name = "Anechoic"
+guid = "{8B0AC232-02E2-4EDE-BEAC-FDD1A900E3ED}"
+id = 1873957695
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_48o7i"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Brick"
+type = 15
+name = "Brick"
+guid = "{B086A5A9-F204-4C53-A838-BDB18B18F6D6}"
+id = 504532776
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ae3t8"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Carpet"
+type = 15
+name = "Carpet"
+guid = "{34227589-DC56-4260-96C4-B9F4B669092B}"
+id = 2412606308
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_glje5"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Concrete"
+type = 15
+name = "Concrete"
+guid = "{5CF81C00-2896-4AE0-AF7C-3080BDABA682}"
+id = 841620460
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_f0h0g"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Cork_Tiles"
+type = 15
+name = "Cork_Tiles"
+guid = "{30D2C919-925F-4143-8906-3DBB3C4AE5E2}"
+id = 3195498748
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_wmco4"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Curtains"
+type = 15
+name = "Curtains"
+guid = "{F8E69E33-5C97-4968-B508-A1535F2D66E8}"
+id = 2928161104
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_2df5g"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Drywall"
+type = 15
+name = "Drywall"
+guid = "{68A4E3F4-4C0B-4687-A8B8-A84DB93DBC8F}"
+id = 3670307564
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_plt85"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Fabric"
+type = 15
+name = "Fabric"
+guid = "{8381D532-DB6E-4EED-A7A3-BC7B0A0B8BA8}"
+id = 1970351858
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_t2fio"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Mountain"
+type = 15
+name = "Mountain"
+guid = "{C5933731-001A-4AB4-98DD-9B033A8C8EAB}"
+id = 513139656
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_drxln"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Tile"
+type = 15
+name = "Tile"
+guid = "{A882DAC4-132A-47B7-BA9D-B9907BA29CC0}"
+id = 2637588553
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_laobf"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Wood"
+type = 15
+name = "Wood"
+guid = "{1FFFBC96-6FE7-489E-BA6C-7C14A71391AE}"
+id = 2058049674
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_f4nw5"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Wood_Bright"
+type = 15
+name = "Wood_Bright"
+guid = "{7B85D1E5-C1A2-4E63-9A13-CEC54B641ADC}"
+id = 4262522749
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lsd02"]
+path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Wood_Deep"
+type = 15
+name = "Wood_Deep"
+guid = "{5246478E-C5DA-4E0C-A0DE-C98D1479529A}"
+id = 1755085759
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_mp5f6"]
+children = [SubResource("WwiseTreeObject_t4fo8"), SubResource("WwiseTreeObject_0ancn"), SubResource("WwiseTreeObject_48o7i"), SubResource("WwiseTreeObject_ae3t8"), SubResource("WwiseTreeObject_glje5"), SubResource("WwiseTreeObject_f0h0g"), SubResource("WwiseTreeObject_wmco4"), SubResource("WwiseTreeObject_2df5g"), SubResource("WwiseTreeObject_plt85"), SubResource("WwiseTreeObject_t2fio"), SubResource("WwiseTreeObject_drxln"), SubResource("WwiseTreeObject_laobf"), SubResource("WwiseTreeObject_f4nw5"), SubResource("WwiseTreeObject_lsd02")]
+name = "Textures"
+id = 1276632493
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_p00cu"]
+children = [SubResource("WwiseTreeObject_mp5f6")]
+name = "Factory Acoustic Textures"
+id = 2954047558
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_1arjf"]
+path = "\\SoundBanks\\Default Work Unit\\SB"
+type = 7
+name = "SB"
+guid = "{39D3CD38-A6B7-4A28-B6D4-0AEE74700C31}"
+id = 1584861542
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_xr14d"]
+children = [SubResource("WwiseTreeObject_1arjf")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_bn4yl"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus"
+type = 2
+name = "Master Audio Bus"
+guid = "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+id = 3803692087
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_57jbg"]
+children = [SubResource("WwiseTreeObject_bn4yl")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_2j010"]
+max_attenuation = 60.0
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\PlayRiver"
+type = 3
+name = "PlayRiver"
+guid = "{4116F2CB-4638-4F21-A906-B0961D2F26D7}"
+id = 1016200483
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dwpdm"]
+children = [SubResource("WwiseTreeObjectEvent_2j010")]
+name = "Default Work Unit"
+id = 125608783
+
+[resource]
+acoustic_texture_root = [SubResource("WwiseTreeObject_p00cu")]
+bus_root = [SubResource("WwiseTreeObject_57jbg")]
+bank_root = [SubResource("WwiseTreeObject_xr14d")]
+event_root = [SubResource("WwiseTreeObject_dwpdm")]

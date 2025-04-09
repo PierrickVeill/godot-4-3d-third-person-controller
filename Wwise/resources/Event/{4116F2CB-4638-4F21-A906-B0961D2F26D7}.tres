@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bujiyqem13r5e"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "PlayRiver"
+id = 1016200483
+guid = "{4116F2CB-4638-4F21-A906-B0961D2F26D7}"
+dummy = true

@@ -20,6 +20,8 @@ config/icon="res://icon.png"
 
 CameraMode="*res://CameraMode/CameraMode.tscn"
 FullScreenHandler="*res://FullScreenHandler.gd"
+WwiseRuntimeManager="*res://addons/Wwise/runtime/wwise_runtime_manager.gd"
+GlobalAkBank="*res://autoloads/ak_bank.tscn"
 
 [display]
 
@@ -120,3 +122,9 @@ pause={
 [physics]
 
 3d/default_gravity=16.0
+
+[wwise]
+
+common_user_settings/root_output_path="res://GeneratedSoundbanks"
+project_settings/windows_platform_info="res://Wwise/resources/Windows.tres"
+project_settings/mac_platform_info="res://Wwise/resources/Mac.tres"

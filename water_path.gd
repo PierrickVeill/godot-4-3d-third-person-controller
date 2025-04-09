@@ -12,4 +12,5 @@ func _ready():
 func _process(delta):
 	var listenerPosition = to_local(listenerToFollow.position)
 	var newEmitterPosition = curve.get_closest_offset(listenerPosition)
-	follow.progress = newEmitterPosition
+	var tween = get_tree().create_tween()
+	tween.tween_property(follow, "progress", newEmitterPosition, 0.6)
