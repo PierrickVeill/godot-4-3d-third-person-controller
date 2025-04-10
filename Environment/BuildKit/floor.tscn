@@ -5,7 +5,9 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_711m3"]
 points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0.3, -0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.3, 0.5, 0.5, 0.3, -0.5, 0.5, 0, 0.5, 0.5, 0.3, 0.5)
 
-[node name="floor" instance=ExtResource("1_fiuwe")]
+[node name="floor" groups=["metal"] instance=ExtResource("1_fiuwe")]
+collision_layer = 17
+collision_mask = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 shape = SubResource("ConvexPolygonShape3D_711m3")

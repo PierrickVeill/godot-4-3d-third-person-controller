@@ -299,4 +299,7 @@ func _playFootstep():
 		if collider.is_in_group("wood"):
 			print("walked on wood")
 			Wwise.set_switch("Surface", "Wood", self)
+		if collider.is_in_group("metal"):
+			print("walked on metal")
+			Wwise.set_switch("Surface", "Metal", self)
 		footstepEvent.post(self)

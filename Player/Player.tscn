@@ -104,7 +104,7 @@ _data = {
 radius = 0.721485
 height = 2.65424
 
-[node name="Player" type="CharacterBody3D" groups=["damageables"]]
+[node name="Player" type="CharacterBody3D" groups=["damageables", "player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true

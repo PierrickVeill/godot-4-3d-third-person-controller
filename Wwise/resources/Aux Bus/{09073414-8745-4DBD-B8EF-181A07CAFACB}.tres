@@ -1,0 +1,8 @@
+[gd_resource type="WwiseAuxBus" format=3 uid="uid://y4rnsct2o3om"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "LabVerb"
+id = 2401766301
+guid = "{09073414-8745-4DBD-B8EF-181A07CAFACB}"
+dummy = true

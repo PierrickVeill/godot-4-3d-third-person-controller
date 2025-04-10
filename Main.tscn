@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ccjru1onq2k2c"]
+[gd_scene load_steps=37 format=4 uid="uid://ccjru1onq2k2c"]
 
 [ext_resource type="PackedScene" uid="uid://mb58xbunfaep" path="res://icons/weapon_ui.tscn" id="1_3u7h6"]
 [ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://Environment/sky/blue_sky.tres" id="2_4bjxn"]
@@ -22,9 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://bi31qtqv1sf2s" path="res://Environment/flowers/flower_patch.tscn" id="15_jqya0"]
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
 [ext_resource type="Script" path="res://water_path.gd" id="20_60tes"]
+[ext_resource type="PackedScene" uid="uid://buchcfjc8afii" path="res://Environment/lab.tscn" id="20_rekay"]
 [ext_resource type="WwiseEvent" uid="uid://bujiyqem13r5e" path="res://Wwise/resources/Event/{4116F2CB-4638-4F21-A906-B0961D2F26D7}.tres" id="22_8sb1g"]
 [ext_resource type="WwiseEvent" uid="uid://bsywqgrswnbnj" path="res://Wwise/resources/Event/{D0C21466-E441-451A-9752-CEA88400F408}.tres" id="23_jcet7"]
-[ext_resource type="PackedScene" uid="uid://buchcfjc8afii" path="res://Environment/lab.tscn" id="20_rekay"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -146,7 +146,7 @@ light_energy = 1.5
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_q87gh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.298, 0.5, -13.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.0375, 23.2902, -14.8184)
 
 [node name="JumpingPad" parent="." instance=ExtResource("3_w2mh2")]
 transform = Transform3D(0.893364, 0, 0.449335, 0, 1, 0, -0.449335, 0, 0.893364, -35.1316, 6.60685, 19.929)
@@ -159,7 +159,6 @@ transform = Transform3D(0.823187, 0, -0.567772, 0, 1, 0, 0.567772, 0, 0.823187, 
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = ExtResource("5_n4asa")
-metadata/_edit_lock_ = true
 
 [node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("20_rekay")]
 transform = Transform3D(4.64249, 0, -1.85668, 0, 5, 0, 1.85668, 0, 4.64249, -28.4122, 21.8526, -26.8965)
@@ -443,7 +442,9 @@ transform = Transform3D(-1, 0, 0.00102866, 0, 1, 0, -0.00102866, 0, -1, 0.056331
 mesh = SubResource("ArrayMesh_xa7tb")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/bridge_001/bridge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/bridge_001/bridge" groups=["wood"]]
+collision_layer = 17
+collision_mask = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/bridge_001/bridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ca8bg")
@@ -1696,6 +1697,7 @@ trigger_on = 1
 [node name="AkEvent3D" type="AkEvent3D" parent="."]
 event = ExtResource("23_jcet7")
 trigger_on = 2
+is_environment_aware = true
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 

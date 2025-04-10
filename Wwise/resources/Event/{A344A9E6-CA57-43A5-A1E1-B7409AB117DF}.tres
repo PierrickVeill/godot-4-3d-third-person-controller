@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://r55asqiy8k2n"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "PlayLab"
+id = 2238149076
+guid = "{A344A9E6-CA57-43A5-A1E1-B7409AB117DF}"
+dummy = true

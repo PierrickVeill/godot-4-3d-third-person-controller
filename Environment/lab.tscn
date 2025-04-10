@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://buchcfjc8afii"]
+[gd_scene load_steps=21 format=3 uid="uid://buchcfjc8afii"]
 
 [ext_resource type="PackedScene" uid="uid://cpu1sp6kly4v3" path="res://Environment/BuildKit/wall.tscn" id="1_i0862"]
 [ext_resource type="PackedScene" uid="uid://bi40ymdshgxet" path="res://Environment/BuildKit/wall_corner.tscn" id="2_ga5f3"]
@@ -15,6 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://clxvd4hw28qlm" path="res://Environment/BuildKit/balcony-floor-center.glb" id="13_l5pgi"]
 [ext_resource type="PackedScene" uid="uid://8f3u6trx06o6" path="res://Environment/BuildKit/balcony-floor-corner.glb" id="14_gsbpv"]
 [ext_resource type="PackedScene" uid="uid://d3tuetaq3e8x6" path="res://Environment/BuildKit/pipe.glb" id="15_6bvw0"]
+[ext_resource type="Script" path="res://scripts/reverbzone.gd" id="16_5vxkh"]
+[ext_resource type="WwiseAuxBus" uid="uid://y4rnsct2o3om" path="res://Wwise/resources/Aux Bus/{09073414-8745-4DBD-B8EF-181A07CAFACB}.tres" id="16_t7gw7"]
+[ext_resource type="WwiseEvent" uid="uid://r55asqiy8k2n" path="res://Wwise/resources/Event/{A344A9E6-CA57-43A5-A1E1-B7409AB117DF}.tres" id="17_a1a3y"]
+[ext_resource type="WwiseEvent" uid="uid://ddpyfgh1bq7t5" path="res://Wwise/resources/Event/{8D75C78D-5CAC-4373-A4CD-1FE9EF727F6A}.tres" id="18_jk0m7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udhtb"]
+size = Vector3(4.6, 1, 2.4)
 
 [node name="Node3D" type="Node3D"]
 
@@ -197,3 +204,22 @@ transform = Transform3D(1, 0, 0, 0, 13.7, 0, 0, 0, 1, 2.1, -7.5, 1.1)
 
 [node name="pipe5" parent="." instance=ExtResource("15_6bvw0")]
 transform = Transform3D(1, 0, 0, 0, 13.7, 0, 0, 0, 1, 2.1, -7.5, -0.9)
+
+[node name="ReverbZone" type="Area3D" parent="."]
+script = ExtResource("16_5vxkh")
+isInside = true
+enterEvent = ExtResource("17_a1a3y")
+exitEvent = ExtResource("18_jk0m7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReverbZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.4, 0.1)
+shape = SubResource("BoxShape3D_udhtb")
+
+[node name="Room" type="AkRoom" parent="ReverbZone"]
+aux_bus = ExtResource("16_t7gw7")
+reverb_level = 0.2
+transmission_loss = 0.0
+
+[connection signal="body_entered" from="ReverbZone" to="ReverbZone" method="_on_body_entered"]
+[connection signal="body_exited" from="ReverbZone" to="ReverbZone" method="_on_body_exited"]
+[connection signal="body_shape_entered" from="ReverbZone/Room" to="ReverbZone" method="_on_room_body_shape_entered"]
