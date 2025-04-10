@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ciqrpd5675boy"]
+[gd_scene load_steps=19 format=3 uid="uid://ciqrpd5675boy"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_rvo1c"]
+[ext_resource type="WwiseEvent" uid="uid://4r0ew5fr3wsy" path="res://Wwise/resources/Event/{13210583-9F68-4BBA-9597-61A2D4198F95}.tres" id="2_ppvet"]
 [ext_resource type="PackedScene" uid="uid://b2ew46dlu7u7x" path="res://Player/GrenadeLauncher.tscn" id="3_54qc4"]
 [ext_resource type="Script" path="res://Player/CameraController.gd" id="3_qrkly"]
 [ext_resource type="Script" path="res://Player/MeleeAttackArea.gd" id="3_v1vve"]
+[ext_resource type="WwiseEvent" uid="uid://bl8h1ski8c2bk" path="res://Wwise/resources/Event/{0B5DD546-6705-490F-8A58-BC0295A863BB}.tres" id="3_ylmv5"]
 [ext_resource type="PackedScene" uid="uid://c0mo8tek77du4" path="res://Player/CharacterSkin.tscn" id="4_ign62"]
 [ext_resource type="Script" path="res://Player/CoinsContainer.gd" id="7_8eehq"]
 [ext_resource type="PackedScene" uid="uid://cqw64w6kb0fyg" path="res://Player/Coin/CoinVisuals/CoinModel.tscn" id="8_6qxxt"]
@@ -109,6 +111,8 @@ axis_lock_angular_z = true
 script = ExtResource("1_rvo1c")
 bullet_speed = 14.0
 acceleration = 6.0
+footstepEvent = ExtResource("2_ppvet")
+gunblastEvent = ExtResource("3_ylmv5")
 
 [node name="CharacterCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

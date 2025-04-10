@@ -55,6 +55,8 @@ enum WEAPON_TYPE { DEFAULT, GRENADE }
 @onready var _shoot_cooldown_tick := shoot_cooldown
 @onready var _grenade_cooldown_tick := grenade_cooldown
 
+@export var footstepEvent : WwiseEvent
+@export var gunblastEvent : WwiseEvent
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -198,6 +200,7 @@ func shoot() -> void:
 	bullet.velocity = aim_direction * bullet_speed
 	bullet.distance_limit = 14.0
 	get_parent().add_child(bullet)
+	gunblastEvent.post(self)
 	bullet.global_position = origin
 
 
@@ -292,3 +295,8 @@ func _playFootstep():
 		var collider = $StepCast.get_collider()
 		if collider.is_in_group("grass"):
 			print("Walked on grass")
+			Wwise.set_switch("Surface", "Grass", self)
+		if collider.is_in_group("wood"):
+			print("walked on wood")
+			Wwise.set_switch("Surface", "Wood", self)
+		footstepEvent.post(self)

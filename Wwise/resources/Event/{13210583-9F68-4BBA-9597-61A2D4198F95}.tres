@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://4r0ew5fr3wsy"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "PlayStep"
+id = 440472397
+guid = "{13210583-9F68-4BBA-9597-61A2D4198F95}"
+dummy = true

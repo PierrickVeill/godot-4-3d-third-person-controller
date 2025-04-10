@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bl8h1ski8c2bk"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "PlayGunblast"
+id = 1799931387
+guid = "{0B5DD546-6705-490F-8A58-BC0295A863BB}"
+dummy = true

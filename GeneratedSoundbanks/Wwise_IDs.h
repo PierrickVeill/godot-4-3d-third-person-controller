@@ -13,8 +13,26 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAYAMBIENCE = 1765704519U;
+        static const AkUniqueID PLAYGUNBLAST = 1799931387U;
         static const AkUniqueID PLAYRIVER = 1016200483U;
+        static const AkUniqueID PLAYSTEP = 440472397U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace SURFACE
+        {
+            static const AkUniqueID GROUP = 1834394558U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace SWITCH
+        } // namespace SURFACE
+
+    } // namespace SWITCHES
 
     namespace BANKS
     {

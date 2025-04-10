@@ -20,8 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://bi31qtqv1sf2s" path="res://Environment/flowers/flower_patch.tscn" id="15_jqya0"]
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
 [ext_resource type="Script" path="res://water_path.gd" id="20_60tes"]
-[ext_resource type="PackedScene" uid="uid://8o56ett8oups" path="res://Environment/orange_flowers/orange_flower.tscn" id="21_gha4u"]
 [ext_resource type="WwiseEvent" uid="uid://bujiyqem13r5e" path="res://Wwise/resources/Event/{4116F2CB-4638-4F21-A906-B0961D2F26D7}.tres" id="22_8sb1g"]
+[ext_resource type="WwiseEvent" uid="uid://bsywqgrswnbnj" path="res://Wwise/resources/Event/{D0C21466-E441-451A-9752-CEA88400F408}.tres" id="23_jcet7"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -51,8 +51,8 @@ render_priority = -1
 shader = ExtResource("8_trepf")
 shader_parameter/water_color = Color(0.133333, 0.490196, 0.823529, 1)
 shader_parameter/water_depth_color = Color(0.164706, 0.537255, 0.901961, 1)
-shader_parameter/water_edge_distance = 0.4
-shader_parameter/water_depth_distance = 8.0
+shader_parameter/water_edge_distance = 0.8
+shader_parameter/water_depth_distance = 4.0
 shader_parameter/water_texture_scale = 40.0
 shader_parameter/main_noise_sampler = SubResource("NoiseTexture2D_71o0d")
 shader_parameter/caustic_sampler = ExtResource("9_8eqnd")
@@ -120,30 +120,30 @@ material_override = ExtResource("5_xal68")
 [node name="large_trunk" parent="NavigationRegion3D/terrain_main_ground" index="1"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_001" parent="NavigationRegion3D/terrain_main_ground" index="2"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_001" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_001" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_002" parent="NavigationRegion3D/terrain_main_ground" index="3"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_002" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_002" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_003" parent="NavigationRegion3D/terrain_main_ground" index="4"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_003" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_003" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="terrain" parent="NavigationRegion3D/terrain_main_ground" index="5"]
 material_override = ExtResource("5_xal68")
@@ -155,30 +155,31 @@ collision_mask = 19
 [node name="large_trunk_004" parent="NavigationRegion3D/terrain_main_ground" index="6"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_004" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_004" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_005" parent="NavigationRegion3D/terrain_main_ground" index="7"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_005" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_005" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_006" parent="NavigationRegion3D/terrain_main_ground" index="8"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_006" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_006" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_007" parent="NavigationRegion3D/terrain_main_ground" index="9"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_007" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_007" index="0" groups=["wood"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0118904, 0, -0.0894127)
+collision_layer = 19
+collision_mask = 19
 
 [node name="Trees" type="Node3D" parent="NavigationRegion3D"]
 
@@ -1623,12 +1624,13 @@ script = ExtResource("20_60tes")
 transform = Transform3D(-0.251913, 0, 0.967743, 0, 1, 0, -0.967743, 0, -0.251913, -41.5512, 0, -12.8134)
 progress = 173.189
 
-[node name="Emitter" parent="WaterPath/PathFollow3D" instance=ExtResource("21_gha4u")]
-transform = Transform3D(-2.98372, 0.312158, -1.36448e-08, 0, -1.31134e-07, -3, -0.312158, -2.98372, 1.30422e-07, 0, 0, 0)
-
 [node name="RiverSFX" type="AkEvent3D" parent="WaterPath/PathFollow3D"]
 event = ExtResource("22_8sb1g")
 trigger_on = 1
+
+[node name="AkEvent3D" type="AkEvent3D" parent="."]
+event = ExtResource("23_jcet7")
+trigger_on = 2
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 
