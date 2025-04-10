@@ -9,6 +9,7 @@ size = Vector3(1, 1.4, 1)
 
 [node name="JumpingPad" type="Area3D"]
 script = ExtResource("1_w7mtj")
+impulse_strength = 15.0
 
 [node name="mushroom" parent="." instance=ExtResource("2_3e4pb")]
 unique_name_in_owner = true
