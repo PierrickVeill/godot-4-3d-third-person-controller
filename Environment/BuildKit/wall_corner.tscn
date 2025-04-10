@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi40ymdshgxet"]
+
+[ext_resource type="PackedScene" uid="uid://bpnmh3qm0msig" path="res://Environment/BuildKit/wall-corner.glb" id="1_f1ujh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cetth"]
+points = PackedVector3Array(-0.4, 0, -0.4, -0.100078, 0, -0.4, -0.4, 0, 0.299922, -0.4, 1, -0.4, 0.4, 0, 0.0999217, -0.100078, 1, -0.4, -0.370791, 0, 0.370634, -0.379013, 0.799922, 0.378857, -0.4, 0.799922, 0.328034, -0.4, 1, 0.328034, 0.4, 0, 0.4, 0.4, 1, 0.0999217, -0.300078, 0, 0.4, -0.328113, 0.799922, 0.4, -0.379013, 1, 0.378857, 0.4, 1, 0.4, -0.328113, 1, 0.4)
+
+[node name="wall-corner" instance=ExtResource("1_f1ujh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_cetth")

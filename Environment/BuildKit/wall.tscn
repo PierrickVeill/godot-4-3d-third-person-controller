@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpu1sp6kly4v3"]
+
+[ext_resource type="PackedScene" uid="uid://cae4kxw6qmogm" path="res://Environment/BuildKit/wall.glb" id="1_kkqrc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mxxgl"]
+points = PackedVector3Array(0.5, 1, 0.15, 0.5, 1, -0.15, -0.5, 1, 0.15, 0.5, 0, 0.15, 0.5, 0, -0.15, -0.5, 1, -0.15, -0.5, 0, 0.15, -0.5, 0, -0.15)
+
+[node name="wall" instance=ExtResource("1_kkqrc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_mxxgl")
