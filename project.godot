@@ -30,6 +30,12 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[global_group]
+
+wood=""
+grass=""
+metal=""
+
 [input]
 
 move_up={

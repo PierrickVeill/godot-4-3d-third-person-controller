@@ -237,8 +237,15 @@ func _get_camera_oriented_input() -> Vector3:
 
 
 func play_foot_step_sound() -> void:
-	#_step_sound.pitch_scale = randfn(1.2, 0.2)
-	#_step_sound.play()
+	if $StepCast.is_colliding():
+		var collider = $StepCast.get_collider()
+		if collider.is_in_group("grass"):
+			Wwise.set_switch("Surface", "Grass", self)
+		if collider.is_in_group("wood"):
+			Wwise.set_switch("Surface", "Wood", self)
+		if collider.is_in_group("metal"):
+			Wwise.set_switch("Surface", "Metal", self)
+		Wwise.post_event("PlayStep", self)
 	pass
 
 

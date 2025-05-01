@@ -172,65 +172,65 @@ material_override = ExtResource("5_xal68")
 [node name="large_trunk" parent="NavigationRegion3D/terrain_main_ground" index="1"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_001" parent="NavigationRegion3D/terrain_main_ground" index="2"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_001" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_001" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_002" parent="NavigationRegion3D/terrain_main_ground" index="3"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_002" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_002" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_003" parent="NavigationRegion3D/terrain_main_ground" index="4"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_003" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_003" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="terrain" parent="NavigationRegion3D/terrain_main_ground" index="5"]
 material_override = ExtResource("5_xal68")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/terrain" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/terrain" index="0" groups=["grass"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_004" parent="NavigationRegion3D/terrain_main_ground" index="6"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_004" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_004" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_005" parent="NavigationRegion3D/terrain_main_ground" index="7"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_005" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_005" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_006" parent="NavigationRegion3D/terrain_main_ground" index="8"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_006" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_006" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="large_trunk_007" parent="NavigationRegion3D/terrain_main_ground" index="9"]
 material_override = ExtResource("6_q3y6j")
 
-[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_007" index="0"]
-collision_layer = 3
-collision_mask = 3
+[node name="StaticBody3D" parent="NavigationRegion3D/terrain_main_ground/large_trunk_007" index="0" groups=["wood"]]
+collision_layer = 19
+collision_mask = 19
 
 [node name="Trees" type="Node3D" parent="NavigationRegion3D"]
 
@@ -442,7 +442,9 @@ transform = Transform3D(-1, 0, 0.00102866, 0, 1, 0, -0.00102866, 0, -1, 0.056331
 mesh = SubResource("ArrayMesh_xa7tb")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/bridge_001/bridge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/bridge_001/bridge" groups=["wood"]]
+collision_layer = 17
+collision_mask = 17
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/bridge_001/bridge/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ca8bg")
@@ -1685,7 +1687,7 @@ curve = SubResource("Curve3D_4j0om")
 script = ExtResource("23_irlg4")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.2948, 0, 0.955557, 0, 1, 0, -0.955557, 0, 0.2948, 12.9989, 0, -13.4798)
+transform = Transform3D(0.294805, 0, 0.955556, 0, 1, 0, -0.955556, 0, 0.294805, 12.9989, 0, -13.4799)
 progress = 68.2573
 
 [node name="AkEvent3D" type="AkEvent3D" parent="Path3D/PathFollow3D"]

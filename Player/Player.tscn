@@ -260,4 +260,8 @@ one_shot = true
 [node name="Listener" type="AkListener3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.87127, 0)
 
+[node name="StepCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204721, 0)
+collision_mask = 16
+
 [editable path="PlayerUI/CoinsContainer/SubViewportContainer/SubViewport/Coin"]
