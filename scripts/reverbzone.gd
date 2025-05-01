@@ -11,7 +11,8 @@ func _on_body_entered(body):
 	Wwise.set_game_object_in_room(body, room)
 	if isInside && body.is_in_group("player"):
 		Wwise.set_state("AmbientState","Inside")
-		enterEvent.post(self)
+		if enterEvent != null:
+			enterEvent.post(self)
 
 
 func _on_body_exited(body):
@@ -19,4 +20,5 @@ func _on_body_exited(body):
 	Wwise.remove_game_object_from_room(body)
 	if isInside && body.is_in_group("player"):
 		Wwise.set_state("AmbientState","Outside")
-		exitEvent.post(self)
+		if exitEvent != null:
+			exitEvent.post(self)
