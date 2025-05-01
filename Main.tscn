@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ccjru1onq2k2c"]
+[gd_scene load_steps=37 format=4 uid="uid://ccjru1onq2k2c"]
 
 [ext_resource type="PackedScene" uid="uid://mb58xbunfaep" path="res://icons/weapon_ui.tscn" id="1_3u7h6"]
 [ext_resource type="Sky" uid="uid://jonn5eom7asv" path="res://Environment/sky/blue_sky.tres" id="2_4bjxn"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://bi31qtqv1sf2s" path="res://Environment/flowers/flower_patch.tscn" id="15_jqya0"]
 [ext_resource type="PackedScene" uid="uid://cnj0t3ad178q6" path="res://DemoPage/DemoPage.tscn" id="16_qr75n"]
 [ext_resource type="PackedScene" uid="uid://buchcfjc8afii" path="res://Environment/lab.tscn" id="20_rekay"]
+[ext_resource type="Script" path="res://AudioScripts/riverEmitter.gd" id="23_irlg4"]
+[ext_resource type="WwiseEvent" uid="uid://dd8jgh53xpbu6" path="res://Wwise/resources/Event/{4116F2CB-4638-4F21-A906-B0961D2F26D7}.tres" id="23_shtaa"]
+[ext_resource type="PackedScene" uid="uid://8o56ett8oups" path="res://Environment/orange_flowers/orange_flower.tscn" id="24_45wsv"]
 
 [sub_resource type="Environment" id="Environment_allox"]
 background_mode = 2
@@ -110,6 +113,13 @@ subdivide_depth = 30
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gym67"]
 size = Vector3(130, 6, 130)
+
+[sub_resource type="Curve3D" id="Curve3D_4j0om"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.18692, 0, 33.0461, 0, 0, 0, 0, 0, 0, 1.29082, 0, 31.1024, 0, 0, 0, 0, 0, 0, 12.688, 0, 22.7974, 0, 0, 0, 0, 0, 0, 21.3464, 0, 14.3158, 0, 0, 0, 0, 0, 0, 26.9125, 0, -0.350398, 0, 0, 0, 0, 0, 0, 20.9046, 0, -11.0408, 0, 0, 0, 0, 0, 0, 12.5997, 0, -13.603, 0, 0, 0, 0, 0, 0, 8.27051, 0, -21.0244, 0, 0, 0, 0, 0, 0, -0.387848, 0, -21.3778, 0, 0, 0, 0, 0, 0, -20.0017, 0, -12.9845, 0, 0, 0, 0, 0, 0, -15.054, 0, 4.06713, 0, 0, 0, 0, 0, 0, -18.8531, 0, 8.573, 0, 0, 0, 0, 0, 0, -25.8328, 0, -12.5428, 0, 0, 0, 0, 0, 0, -27.1581, 0, -15.37, 0, 0, 0, 0, 0, 0, -30.0736, 0, -15.635, 0, 0, 0, 0, 0, 0, -28.9251, 0, -18.4623, 0, 0, 0, 0, 0, 0, -28.2183, 0, -21.1128, 0, 0, 0, 0, 0, 0, -33.1659, 0, -22.7031, 0, 0, 0, 0, 0, 0, -35.1096, 0, -19.9642, 0, 0, 0, 0, 0, 0, -36.5232, 0, -16.5186, 0, 0, 0, 0, 0, 0, -40.9408, 0, -13.1612, 0, 0, 0, 0, 0, 0, -55.6953, 0, -9.18546, 0, 0, 0, 0, 0, 0, -47.8321, 0, 24.1227, 0, 0, 0, 0, 0, 0, -51.9846, 0, 27.1266, 0, 0, 0, 0, 0, 0, -53.3098, 0, 33.6646, 0, 0, 0, 0, 0, 0, -46.5952, 0, 47.2705, 0, 0, 0, 0, 0, 0, -23.0056, 0, 39.8491, 0, 0, 0, 0, 0, 0, -4.18692, 0, 33.0461),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 28
 
 [node name="Playground" type="Node3D"]
 
@@ -1669,6 +1679,20 @@ transform = Transform3D(2.05346, 0, 0.789485, 0, 2.2, 0, -0.789485, 0, 2.05346, 
 skeleton = NodePath("../..")
 
 [node name="DemoPage" parent="." instance=ExtResource("16_qr75n")]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_4j0om")
+script = ExtResource("23_irlg4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.2948, 0, 0.955557, 0, 1, 0, -0.955557, 0, 0.2948, 12.9989, 0, -13.4798)
+progress = 68.2573
+
+[node name="AkEvent3D" type="AkEvent3D" parent="Path3D/PathFollow3D"]
+event = ExtResource("23_shtaa")
+trigger_on = 2
+
+[node name="OrangeFlower" parent="Path3D/PathFollow3D" instance=ExtResource("24_45wsv")]
 
 [connection signal="weapon_switched" from="Player" to="weapon_switch_ui" method="switch_to"]
 

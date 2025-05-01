@@ -55,7 +55,7 @@ func damage(impact_point: Vector3, force: Vector3) -> void:
 		return
 	
 	#_defeat_sound.play()
-	_alive = false
+	_alive = false 
 	
 	_flying_animation_player.stop()
 	_flying_animation_player.seek(0.0, true)

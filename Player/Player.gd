@@ -55,7 +55,6 @@ enum WEAPON_TYPE { DEFAULT, GRENADE }
 @onready var _shoot_cooldown_tick := shoot_cooldown
 @onready var _grenade_cooldown_tick := grenade_cooldown
 
-
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	_camera_controller.setup(self)
@@ -171,6 +170,7 @@ func _physics_process(delta: float) -> void:
 
 	var position_before := global_position
 	move_and_slide()
+	$Listener.rotation = $CameraController/PlayerCamera.rotation
 	var position_after := global_position
 
 	# If velocity is not 0 but the difference of positions after move_and_slide is,
@@ -197,6 +197,7 @@ func shoot() -> void:
 	bullet.distance_limit = 14.0
 	get_parent().add_child(bullet)
 	bullet.global_position = origin
+	Wwise.post_event("PlayGunblast", self)
 
 
 func reset_position() -> void:
